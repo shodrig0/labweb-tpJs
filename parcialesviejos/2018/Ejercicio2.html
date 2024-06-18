@@ -1,0 +1,127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Parcial JS</title>
+	<link href="default.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="app.js">
+	</script>
+
+	<!-- <script type="text/javascript">
+		function validarMayor() {
+			var num1 = document.getElementById("Numero1").value;
+			var num2 = document.getElementById("Numero2").value;
+			var max = mayor(num1, num2);
+			if (num1 == max && num2 == max) {
+				document.getElementById("Numero1").style.backgroundColor = "#ff8000";
+				document.getElementById("Numero2").style.backgroundColor = "#ff8000";
+			} else if (num1 == max && num2 < max) {
+				document.getElementById("Numero1").style.backgroundColor = "#ff0000";
+				document.getElementById("Numero2").style.backgroundColor = "#00FF00";
+			} else {
+				document.getElementById("Numero1").style.backgroundColor = "#00FF00";
+				document.getElementById("Numero2").style.backgroundColor = "#ff0000";
+			}
+
+		}
+
+	</script> -->
+
+</head>
+
+<body>
+	<div id="header">
+		<div id="logo">
+			<h1><a href="#">Parcial JS</a></h1>
+			<h2><a href="http://www.freecsstemplates.org/">By Free CSS
+					Templates</a></h2>
+		</div>
+	</div>
+	<div id="menu">
+		<ul>
+			<li><a href="Ejercicio1.html">Ejercicio 1</a></li>
+			<li><a href="Ejercicio2.html">Ejercicio 2</a></li>
+		</ul>
+	</div>
+	<div id="content">
+		<div id="main">
+			<h3>Ejercicio 2</h3>
+			<br />
+			<ol>
+				<li>
+					<p align="justify" style="font-family: Arial;font-size: small;">
+						Crear en el archivo default.js la funci&oacute;n: <b>mayor(X,Y)</b>
+						Esta funci&oacute;n debe devolver el mayor entre los n&uacute;meros X e Y
+						Ej. mayor('15','5') devuelve 15, mayor('245','989') devuelve 989.
+					</p>
+				</li>
+				<li>
+					<p align="justify" style="font-family: Arial;font-size: small;">
+						En el Head de archivo (Ejercicio2.html) crear una funci&oacute;n
+						validarMayor() que obtenga los valores ingresados en los input "Numero1"
+						y "Numero2" y utilizando la funci&oacute;n creada en el inciso anterior modifique
+						el color del input que tenga el valor mayor a rojo y el menor en verde. En el caso de que los
+						valores sean iguales marcar ambos input de color naranja.
+						Modificar el bot&oacute;n Validar del formulario HTML para agregarle en el evento onClick
+						la llamada a la funci&oacute;n validarMayor() <br />
+						<b>(Ayuda: para cambiar el color del input modificar la propiedad color del style del input)</b>
+					</p>
+				</li>
+			</ol>
+
+			<br />
+			<br />
+			<form>
+				<div align="center">
+					<input type="text" id="Numero1" name="Numero1" /><br /><br />
+					<input type="text" id="Numero2" name="Numero2" /><br /><br />
+					<input type="button" value="Validar" onclick="validarNumeros()" /><br /> <br />
+
+					<div id="mensaje" style="width: 300px;height: 200px;"></div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+	<div id="footer">
+		<p id="legal">Copyright &copy; 2007 AtomoHost. All Rights Reserved.
+			Designed by <a href="http://www.freecsstemplates.org/">Free CSS
+				Templates</a>.</p>
+		<p id="links"><a href="#">Privacy Policy</a> | <a href="#">Terms
+				of Use</a></p>
+	</div>
+
+	<script>
+		function validarNumeros() {
+			let num1 = document.getElementById('Numero1')
+			let num2 = document.getElementById('Numero2')
+
+			let v1 = parseInt(num1.value)
+			let v2 = parseInt(num2.value)
+
+			let numMayor = (v1, v2)
+
+			if (v1 > v2) {
+				num1.style.backgroundColor = 'red'
+				num2.style.backgroundColor = 'green'
+			}
+			if (v2 > v1) {
+				num2.style.backgroundColor = 'red'
+				num1.style.backgroundColor = 'green'
+			}
+			if (v1 === v2) {
+				num1.style.backgroundColor = 'orange'
+				num2.style.backgroundColor = 'orange'
+			}
+
+		}
+	</script>
+</body>
+
+</html>
