@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="./JavaScript002.js"></script>
+    <script>
+        document.write("¡Hola, maaundo!");
+    </script>
+</head>
+<body>
+    <div>
+    <div>
+        <h1>tp2</h1>
+        <div>
+            <form action="datos">
+            <label for="x">X</label>
+            <input id="x" name="x"type="text">
+            <label for="y">Y</label>
+            <input id="y" type="text" name="y">
+        </form>
+            <button onclick="sumar()">sumar</button>
+            <button onclick="restar()">resta</button>
+            <button onclick="dividir()">dividir</button>
+            <button onclick="multiplicar()">Multiplicar</button>
+        </div>
+    <h2>Resultados</h2>
+    <div id="result">0</div>
+
+    <div>
+        <h1>Conversor de Moneda</h1>
+        <select name="operacion" id="operacion">
+            <option value="ps_Ds">Pesos a Dolares</option>
+            <option value="Ds_ps">Dolares a Pesos</option>
+            <option value="ps_Rs">Pesos a Reales</option>
+            <option value="Rs_ps">Reales a Pesos</option>
+            <option value="ps_Es">Pesos a Euros</option>
+            <option value="Es_ps">Euros a Pesos</option>
+        </select>
+      pasar de 
+        <input type="number" id="monto"> a
+        <p id="valor_Ref">0</p>
+        <p id="result"></p>
+
+        <button onclick="TransportarMoneda()">TransportarMoneda</button>
+
+    </div>
+   
+
+    </div>
+</body>
+</html>
