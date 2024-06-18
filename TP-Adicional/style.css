@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: stretch;
+}
+
+button {
+    width: 100%;
+    height: 5vh;
+    border: none;
+    color: rgb(228, 228, 228);
+    font-weight: 600;
+    background-color: rgb(255, 0, 0);
+    border-radius: 0.2em;
+    transition: background-color 200ms ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(238, 27, 27);
+    cursor: pointer;
+}

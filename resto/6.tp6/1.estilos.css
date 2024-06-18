@@ -1,0 +1,35 @@
+/* Redefinir el estilo de los vínculos de la siguiente manera
+
+# No visitados: color verde oscuro en negrita.
+
+# Visitados: color rojo en negrita.
+
+# Hover: color rojo en negrita itálica.
+
+# Activos: color azul en negrita, letra del doble de tamaño (usa em) */
+
+/* Estilo para vínculos no visitados */
+a:link {
+    color: darkgreen; /* Color verde oscuro */
+    font-weight: bold; /* Negrita */
+}
+
+/* Estilo para vínculos visitados */
+a:visited {
+    color: red; /* Color rojo */
+    font-weight: bold; /* Negrita */
+}
+
+/* Estilo para vínculos al pasar el cursor (hover) */
+a:hover {
+    color: red; /* Color rojo */
+    font-style: italic; /* Itálica */
+    font-weight: bold; /* Negrita */
+}
+
+/* Estilo para vínculos activos */
+a:active {
+    color: blue; /* Color azul */
+    font-weight: bold; /* Negrita */
+    font-size: 2em;  /*Tamaño de fuente el doble del tamaño normal */
+}

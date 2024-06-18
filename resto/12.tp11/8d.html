@@ -1,0 +1,49 @@
+<html>
+    <head>
+
+        <title>Verificación de Versión del Navegador</title>
+        
+        <script>
+
+            function verificarVersion() {
+                var userAgent = navigator.userAgent;
+                var versionActual = navigator.appVersion;
+
+                if (userAgent.indexOf("Chrome") > -1 && !userAgent.includes("Edg")) {
+                    // Verificar Chrome
+                    if (!versionActual.includes("113")) {
+                        alert("Tu versión de Chrome no es la última. Por favor, actualiza tu navegador.");
+                    }
+                } else if (userAgent.indexOf("Firefox") > -1) {
+                    // Verificar Firefox
+                    if (!versionActual.includes("114")) {
+                        alert("Tu versión de Firefox no es la última. Por favor, actualiza tu navegador.");
+                    }
+                } else if (userAgent.indexOf("Safari") > -1 && !userAgent.includes("Chrome")) {
+                    // Verificar Safari
+                    if (!versionActual.includes("16")) {
+                        alert("Tu versión de Safari no es la última. Por favor, actualiza tu navegador.");
+                    }
+                } else if (userAgent.indexOf("Edg") > -1) {
+                    // Verificar Edge
+                    if (!versionActual.includes("113")) {
+                        alert("Tu versión de Edge no es la última. Por favor, actualiza tu navegador.");
+                    }
+                } else {
+                    alert("No se pudo detectar el navegador o no es compatible con esta verificación.");
+                }
+            }
+
+            window.onload = verificarVersion;
+        </script>
+
+    </head>
+
+    <body>
+
+        <h1>Verificación de Versión del Navegador</h1>
+        <p>Se está verificando si tu navegador está actualizado...</p>
+
+    </body>
+
+</html>

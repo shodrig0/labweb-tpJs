@@ -1,0 +1,105 @@
+
+/* cabecera */
+#content #header{
+    position: absolute;
+    height: 100px;
+    width: 1034px;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(25, 25, 136);
+    border: red solid;
+    color: yellow;
+    font-size: small;
+    
+}
+/* cabecera */
+
+/* lateral izquierdo */
+#content #nav{
+    position: absolute;
+    width: 180px;
+    height: 350px;
+    top: 115px;
+    left: 0px;
+    background-color: black;
+}
+
+#content #nav ul{
+    position: absolute;
+    top: 0px;
+    left: -40px;
+    width: 180px;
+}
+
+#content #nav li{
+    list-style-type: none;
+    background-color: grey;
+    text-align: center;
+    height: 38px;
+    border: 1px rgb(152, 152, 152) solid;
+}
+
+#content #nav a{
+    color: rgb(5, 80, 255);
+}
+/* lateral izquierdo */
+
+/* lateral derecha */
+#content #contentinner{
+    position: absolute;
+    top: 105px;
+    right: 10px;
+    width: 80%;
+}
+
+#content #contentinner p{
+    font-size: 1em;
+    /* align-content: justify; */
+}
+
+#content #hr_uno{
+    position: absolute;
+    top: 105px;
+    right: 1px;
+    width: 838px;
+    border:  red solid;
+}
+
+#content #hr_dos{
+    position: absolute;
+    top: 105px;
+    left: 0px;
+    width: 178px;
+    border:  red solid;
+}
+/* lateral derecha */
+
+/* bottom */
+#hr_tres{
+    position: absolute;
+    bottom: -65px;
+    right: 1px;
+    width: 838px;
+    border:  red solid;
+}
+
+#hr_cuatro{
+    position: absolute;
+    bottom: -65px;
+    left: 0px;
+    width: 178px;
+    border:  red solid;
+}
+
+#footer{
+    position: absolute;
+    bottom: -150px;
+    left: 0px;
+    background-color: rgb(25, 25, 136);
+    width: 1034px;
+    height: 80px;
+
+    color: yellow;
+    border: red solid;
+}
+/* bottom */

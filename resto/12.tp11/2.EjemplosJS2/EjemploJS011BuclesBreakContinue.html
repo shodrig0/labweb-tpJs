@@ -1,0 +1,51 @@
+<html>
+	
+	<body>
+
+		<script type="text/javascript">
+			
+			var dias = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+			var i;
+			
+			document.write('for break corta ejecucion el jueves<br>');
+			
+			for(i=0; i<7; i++){
+				
+				document.write(dias[i])
+
+				if (i==3){
+					
+					break;
+
+				}
+
+			}
+
+			document.write('<br>while continue saltea jueves<br>');
+			
+			i=-1;
+			
+			while(i < 6){
+				
+				i++;
+				
+				if (i==3){
+					
+					continue;
+
+				}
+
+				document.write(dias[i]);
+
+			}
+
+			// 	<!-- TODO:
+			// - En el while cortar la ejecucion el dia Viernes
+			// - En el for saltear la ejecucion del dia Martes
+			//  -->
+
+		</script>
+
+	</body>
+
+</html>

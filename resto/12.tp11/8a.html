@@ -1,0 +1,58 @@
+<html>
+
+<head>
+
+    <title>Ejercicio 8: eventos y objetos</title>
+
+    <style type="text/css">
+        
+        /* Estilo inicial para la lista */
+        #listaColores {
+            padding: 20px;
+            list-style-type: none;
+        }
+
+        #listaColores li {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+
+    <script type="text/javascript">
+        
+        // Función para cambiar el color de fondo de la lista
+        function cambiarColorFondo(color) {
+
+            document.getElementById('listaColores').style.backgroundColor = color;
+
+        }
+
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <h1>Ejercicio 8: eventos y objetos</h1>
+
+    <ul id="listaColores">
+
+        <li onmouseover="cambiarColorFondo('white')">Blanco</li>
+        
+        <li onmouseover="cambiarColorFondo('black')">Negro</li>
+        
+        <li onmouseover="cambiarColorFondo('blue')">Azul</li>
+        
+        <li onmouseover="cambiarColorFondo('red')">Rojo</li>
+        
+        <li onmouseover="cambiarColorFondo('yellow')">Amarillo</li>
+
+    </ul>
+
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<html>
+
+<!-- Desarrollar una página que detecte el browser cliente. Luego:
+
+# si el browser es ‘Microsoft Internet Explorer’ redireccionar la página a
+http://www.microsoft.com/ie
+
+#si el browser es ‘Firefox’ redireccionar la página a http://www.mozilla.com/firefox/
+
+#si el browser es ‘Konkeror’ redireccionar la página a http://konqueror.org
+
+#si es otro escribir en pantalla ‘browser desconocido’. -->
+
+    <head>
+
+        <title>Deteccion de Navegador</title>
+        
+        <script>
+
+            function detectarNavegador() {
+                var userAgent = navigator.userAgent;
+
+                if (userAgent.indexOf("MSIE") > -1 || userAgent.indexOf("Trident") > -1) {
+
+                    // Microsoft Internet Explorer
+                    window.location.href = "http://www.microsoft.com/ie";
+
+                } else if (userAgent.indexOf("Firefox") > -1) {
+                    
+                    // Firefox
+                    window.location.href = "http://www.mozilla.com/firefox/";
+
+                } else if (userAgent.indexOf("Konqueror") > -1) {
+                    
+                    // Konqueror
+                    window.location.href = "http://konqueror.org";
+
+                } else {
+
+                    // Navegador desconocido
+                    document.getElementById('mensaje').innerText = 'Browser desconocido';
+                    
+                }
+            }
+
+        </script>
+
+    </head>
+
+    <body onload="detectarNavegador()">
+        
+        <p id="mensaje"></p>
+
+    </body>
+
+</html>

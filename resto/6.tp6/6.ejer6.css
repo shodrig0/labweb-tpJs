@@ -1,0 +1,28 @@
+
+/* - Agregar a los textbox un borde de 1 píxel, solido y gris claro (#C5C5C5). La letra debe ser “Arial” de 12 píxeles de tamaño y color gris oscuro (#666666). Agregar un espacio de rellenos de 5 píxeles.
+
+- Modificar también los bordes, la fuente y el color de los botones.  */
+
+.modificar {
+    border: 1px solid #C5C5C5; /* Borde sólido de 1 píxel, color gris claro (#C5C5C5) */
+    font-family: Arial, sans-serif; /* Fuente Arial o fuente genérica sans-serif */
+    font-size: 12px; /* Tamaño de fuente de 12 píxeles */
+    color:#666666; /* Color de texto gris oscuro (#666666) */
+    padding: 5px; /* Relleno de 5 píxeles */
+}
+
+.boton {
+    /* accent-color: green; */
+    padding: 1px; /* Relleno de 5 píxeles */
+    width: 100px;
+    height: 100px;
+}
+
+span{
+    font-family: Impact, 'Arial Narrow Bold', sans-serif; /* Fuente Arial o fuente genérica sans-serif */
+    font-size: 12px; /* Tamaño de fuente de 12 píxeles */
+    padding: 2px; /* Relleno de 5 píxeles */
+}
+
+/* los botones son type = submit, reset y radio.
+no incluyen los checkbox */

@@ -1,0 +1,142 @@
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* ejercicio 1 */
+body{
+    font-family: sans, "lucida grande", tahoma, verdana, sans-serif;
+    font-size: 12px;
+    background-color: white;
+    color: black;
+}
+/* ejercicio 2
+#requirements, #footer, #benefits, #participation, #supportingText, #preamble, #intro, #extraDiv1, #extraDiv2, #extraDiv2, #extraDiv4{
+} */
+
+#intro {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1035px;
+    background-color: blue;
+}
+
+#intro #quickSummary, #preamble{
+    position: absolute;
+    left: 263px;
+    top: 83.5px;
+    width: 773px;
+    background-color: lightblue;
+}
+
+#supportingText{
+    position: absolute;
+    left: 263px;
+    top: 225px;
+    width: 755px;
+}
+
+#linkList{
+    /* width: 20%; */
+    width: 262px;
+    position: absolute;
+    top: 83px;
+    left: 0px;
+    height: 950px;
+    background-color: red;
+
+}
+
+#lresources li{
+    list-style-type: none;
+
+}
+
+/* Cuanto hay un hover de un link, el fondo del color deberia cambiar a #036, y el color de texto #9cf. */
+#lresources a:hover{
+    background-color: #036;
+    color: #9cf;
+}
+
+#linkList #linkList2 #larchives li{
+    display: inline-block; /*poner los li(listas) en una linea de lista)*/
+    margin-right: 10px;
+    list-style-type: none; /* Quita los bullets */
+}
+
+#linkList #linkList2 #larchives .accesskey-next{ /*va a la derecha */
+    position: relative;
+    left: 100px;
+}
+
+#linkList #linkList2 #larchives .accesskey-previous{ /*va a la izquierda */
+    position: relative;
+    right: 100px;
+    
+}
+
+#linkList #linkList2 #larchives .accesskey-All-Designs{ /*va a abajo de la derecha */
+    display: block;
+    position: absolute;
+    top: 220px;
+    left: 40px;
+    /* display: none; oculta el display*/
+    /* display: block; debo pensar que lo transforma en un div, una caja de bloque */
+    
+}
+
+#intro #pageHeader h1{
+    padding: 10px;
+    background-color: #ddd;
+    border: 1px;
+    position: absolute;
+    top: 10px; /* mi duda */
+
+    background: url('css_zen_garden.gif') no-repeat;
+    width: 500px;
+    height: 50px;
+
+    
+}
+
+#intro #pageHeader h2{
+    padding: 15px;
+    border: 1px solid grey;
+
+    background: url(zen_h2_back.gif);
+    background-repeat: repeat-x; /* Repite la imagen solo horizontalmente */
+    width: auto;
+    height: auto;
+    background-origin: border-box; /* La imagen comienza desde el borde del elemento */
+    background-color: #489AED;
+}
+
+/* ejercicio 4 */
+#lresources{
+    background-color: #9cf;
+    position: relative;
+    top: 10px;
+    
+}
+
+#lresources a{
+    text-decoration: none; /* Quita el subrayado */
+    font-weight: bold; /* Hace que el texto esté en negrita */
+    color: #036; /* Color de texto azul (#036) */
+}
+
+#linkList #linkList2 #lselect li{
+    list-style-type: none; /* Quita los bullets predeterminados */
+    background: url('blue_bullet.gif') no-repeat left center;
+}
+
+#linkList #linkList2 #lselect a{
+    margin: 6%;
+}
+
+
+
+
+
+

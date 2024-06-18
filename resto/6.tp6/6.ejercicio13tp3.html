@@ -1,0 +1,70 @@
+<html>
+<!-- Ejercicio 13 tp3 - Confeccionar una página para el Sitio de la inmobiliaria realizado en el práctico 2.
+La página debe contener un formulario en el que se solicita:
+• Nombre (25 caracteres máximo)
+• Apellido (25 caracteres máximo)
+• Dirección (un textarea de 30 caracteres máximo)
+• Teléfono (15 caracteres máximo con un valor inicial 0299)
+• Permitir seleccionar solo una de las siguientes opciones (Alquiler, compra) por defecto seleccionado compra
+• Permitir seleccionar una o mas de las siguientes opciones (zona centro, zona norte, zona sur), por defecto seleccionada zona centro y zona sur
+• Comentario del inmueble que busca
+• Botón para resetear el formulario
+• Botón para enviar los datos al servidor -->
+
+<!-- Ejercicio 6 tp6:
+Hacer una copia de la pagina html generada en el Ejercicio 13 del práctico 3 de html y modificar el estilo del formulario generado para la inmobiliaria:
+
+- Agregar a los textbox un borde de 1 píxel, solido y gris claro (#C5C5C5). La letra debe ser “Arial” de 12 píxeles de tamaño y color gris oscuro (#666666). Agregar un espacio de rellenos de 5 píxeles.
+
+- Modificar también los bordes, la fuente y el color de los botones. -->
+
+    <head>
+
+        <title>Ejercicio 13</title>
+
+        <link rel="stylesheet" type="text/css" href="6.ejer6.css" title="style" media="screen">
+    </head>
+
+    <body>
+
+        <FORM align="center">
+
+            <h1>Formulario de Inmobiliaria</h1>
+
+            Ingrese Nombre: <input type="text" class="modificar" maxlength="25">
+            <br><br>
+
+            Ingrese Apellido: <input type="text" class="modificar" maxlength="25">
+            <br><br>
+
+            <textarea name="direccion" id="" cols="30" rows="10" placeholder="Ingrese Direccion:" maxlength="30"></textarea>
+            <br><br>
+
+            Ingrese Telefono: <input type="text" class="modificar" value="0299">
+            <br><br>
+
+            <span>Tipo de Alquiler:</span> 
+            <br>
+
+            <span>Alquiler</span><input type="radio" class="boton" name="alquiler" value="alquiler"> <span>Compra</span><input type="radio" class="boton" name="alquiler" value="compra" checked>
+            <br><br>
+
+            Zona: 
+            <br>
+            <select name="zona" id="tipoZona" size="3" multiple="">
+                <option value="zona centro">zona centro</option>
+                <option value="zona norte" selected>zona norte</option>
+                <option value="zona sur" selected>zona sur</option>
+            </select>
+            <br><br>
+
+            Comentario de Imueble que se Busca: <input type="text" class="modificar" maxlength="50">
+            <br><br>
+            <input type="reset" value="Resetear">
+            <input type="submit" value="Enviar">
+
+        </FORM>
+
+    </body>
+
+</html>

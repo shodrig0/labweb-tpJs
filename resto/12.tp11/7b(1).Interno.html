@@ -1,0 +1,33 @@
+<html>
+
+    <head>
+        
+        <title>Números Pares</title>
+
+        <script>
+
+            function mostrarNumerosPares() {
+                
+                var contenido = '';
+                
+                for (var i = 0; i < 500; i += 2) {
+                                                            
+                    contenido += i + ' ';
+                                            
+                }
+
+                document.getElementById('numeros-pares').innerHTML = contenido;
+
+            }
+
+        </script>
+        
+    </head>
+
+    <body onload="mostrarNumerosPares();">
+
+        <div id="numeros-pares"></div>
+
+    </body>
+
+</html>

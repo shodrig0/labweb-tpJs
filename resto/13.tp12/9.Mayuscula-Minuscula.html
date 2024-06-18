@@ -1,0 +1,60 @@
+<html>
+
+    <head>
+        
+        <title>Mayuscula-Minuscula</title>
+
+        <!-- <script type="text/javascript">
+
+            function mostrarSinEspacios(men){
+
+                for(var i = o; i < men.length; i++){
+                    
+                    men[i]
+                }
+
+            }
+            
+        </script> -->
+
+    </head>
+
+    <body>
+        
+        <script type="text/javascript">
+            
+            var boxMensjae = document.getElementById("msj");
+            var mensaje = prompt("Ingrese una palabra: ");
+
+            if (mensaje === "hola"){
+                
+                mensaje = "hola que tal";
+                var subMensaje = mensaje.substr(5, 10);                
+                var ingles = "my hello name";
+                var sinEspacios = mensaje.replace(/\s+/g, '');                
+
+                boxMensjae.innerHTML = document.write("Mayuscula: " + mensaje.toUpperCase() + 
+                                "<br>Minuscula: " + mensaje.toLowerCase() + 
+                                "<br>Submensaje: " + subMensaje + 
+                                "<br>Sin Espacio: " + sinEspacios + 
+                                "<br>Ingles: " + ingles);
+            } else{
+
+                var ingles = "my hello name";
+                var subMensaje = mensaje.substr(5, 10); 
+                var sinEspacios = mensaje.replace(/\s+/g, '');                            
+
+                boxMensjae.innerHTML = document.write("Mayuscula: " + mensaje.toUpperCase() + 
+                                "<br>Minuscula: " + mensaje.toLowerCase() + 
+                                "<br>Submensaje: " + subMensaje + 
+                                "<br>Sin Espacio: " + sinEspacios +  
+                                "<br>Ingles: " + ingles);
+
+            }
+
+        </script>
+
+        <div id="msj"></div>
+    </body>
+
+</html>

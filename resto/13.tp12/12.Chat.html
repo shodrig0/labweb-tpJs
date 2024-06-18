@@ -1,0 +1,298 @@
+<html>
+
+<!-- Desarrollar una página de título CHAT. Esta página debe tener un 
+formulario en donde se pueda ingresar en nombre de usuario y los mensajes 
+que se quieren visualizar. 
+
+Al hacer click sobre el botón "enviar mensaje"
+se deben listar los mensajes como muestra la figura. También se debe 
+posicionar el cursor en el textarea y eliminar el contenido anterior. 
+
+ejemplo:
+06/05/2008 01:07:40 por NNNNN
+es es mi segundo post
+-->
+
+<head>
+
+    <title>Chat</title>
+
+    <script type="text/javascript">
+
+        function mostrarInformacion(event) {
+
+            event.preventDefault(); // Evita que el formulario se envíe y la página se recargue
+
+            /*
+            el profe mauro me dijo que esta bien. ya que debo hacer "parar" el 
+            recargue y es con un input typr="submit"
+            */
+
+            // Obtengo los valores de cada elemento
+            var nombre = document.getElementById("nombre").value;
+            var descripcion = document.getElementById("tabla").value;
+
+            // Obtengo la fecha y hora actual
+            var tiempo = new Date();
+            var fechaHora = tiempo.toLocaleString();
+
+            // Creo nuevos elementos
+            var divInfo = document.getElementById("info");
+            var lista = document.createElement('ul');
+
+            var filaFechaHora = document.createElement('li');
+            var filaMensaje = document.createElement('li');
+
+
+            //no es necesario poner lo que sigue sobre querySelector()
+
+            // Agrego un ul en el div si no existe
+            if (!divInfo.querySelector('ul')) {
+                divInfo.appendChild(lista);
+            } else {
+                lista = divInfo.querySelector('ul');
+            }
+
+            //filaFechaHora.innerHTML = `${fechaHora} por ${nombre}`;         (otra fomra de hacerlo)
+            filaFechaHora.innerHTML = fechaHora + " por " + nombre;
+            lista.appendChild(filaFechaHora);
+
+            filaMensaje.innerHTML = descripcion;
+            lista.appendChild(filaMensaje);
+
+            // Limpiar el textarea y posicionar el cursor en él
+            document.getElementById("tabla").value = "";
+            document.getElementById("nombre").value = "";            //document.getElementById("tabla").focus();
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1>CHAT</h1>
+
+    <hr>
+
+    <FORM onsubmit="mostrarInformacion(event)">
+
+        Nombre<input type="text" id="nombre">
+
+        <br>
+
+        <textarea name="" id="tabla" rows="10" cols="60">Este es mi segundo post</textarea>
+
+        <input type="submit" value="enviar Mensaje"></input>
+
+        <div id="info"></div>
+
+
+    </FORM>
+
+</body>
+
+<!-- que hace el evento onsubmit en form: 
+
+    El evento onsubmit en un elemento <form> en HTML se utiliza para ejecutar una función JavaScript cuando se envía el formulario. Este evento se activa cuando el usuario intenta enviar el formulario, ya sea haciendo clic en un botón de tipo "submit" o presionando la tecla "Enter" mientras se encuentra en uno de los campos del formulario. -->
+
+
+
+
+
+
+
+
+
+    <!--Explicación querySelector()
+        
+        // Agrego un ul en el div si no existe
+        if (!divInfo.querySelector('ul')) {
+            divInfo.appendChild(lista);
+        } else {
+            lista = divInfo.querySelector('ul');
+        }
+        
+    1) Verificación de la existencia de <ul> en divInfo:
+
+        # divInfo.querySelector('ul'): Este método busca el primer elemento <ul> dentro del elemento divInfo.
+
+        # Si querySelector('ul') no encuentra ningún elemento <ul>, devolverá null.
+
+    2)Condicional if (!divInfo.querySelector('ul')):
+
+        # !divInfo.querySelector('ul'): Este condicional verifica si no existe un elemento <ul> dentro de divInfo. 
+        
+        # Si querySelector('ul') devuelve null, la condición será verdadera.
+    
+    3)Si <ul> no existe, crear y agregar uno nuevo:
+
+        # divInfo.appendChild(lista): Si la condición es verdadera (no existe un <ul>), se agrega el nuevo elemento <ul> (almacenado en la variable lista) como hijo de divInfo.
+
+    4)Si <ul> ya existe, reutilizar el existente:
+
+        # else: Si la condición es falsa (es decir, ya existe un <ul> dentro de divInfo), se ejecuta el bloque else.
+
+        #lista = divInfo.querySelector('ul'): Aquí, se asigna el existente elemento <ul> encontrado dentro de divInfo a la variable lista.
+
+    Resumen:
+    Este fragmento de código garantiza que haya exactamente un elemento <ul> dentro de divInfo:
+
+        #Si no hay ningún <ul> en divInfo, se crea uno nuevo y se agrega.
+        
+        #Si ya existe un <ul>, se reutiliza el existente para añadir más elementos <li> en él.
+
+    Esto evita la duplicación de múltiples listas <ul> y mantiene la estructura HTML ordenada y consistente.    -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Explicacion de mostrarInformacion(event) que hace el event como parametro?
+
+    El parámetro event en la función mostrarInformacion(event) representa el objeto del evento que se pasa automáticamente a la función cuando se produce el evento. En el caso del evento onsubmit, event contiene información sobre el evento de envío del formulario.
+
+    ¿Qué hace event como parámetro?
+    Previene el comportamiento predeterminado del formulario:
+
+    event.preventDefault(); : Esta llamada evita que el formulario se envíe de manera tradicional y que la página se recargue. Esto es útil cuando deseas manejar el envío del formulario con JavaScript, como para validación o envío asincrónico. 
+    
+    Proporciona información sobre el evento: 
+    event contiene información útil sobre el evento que ocurrió, como qué elemento disparó el evento, los datos del formulario, etc. -->
+
+
+
+
+
+
+
+
+
+
+<!-- que hace .focus()  en   ocument.getElementById("tabla").focus();
+
+El método document.getElementById("tabla").focus(); se utiliza en JavaScript para poner el foco en el elemento del DOM identificado por el ID "tabla". Este método es comúnmente usado con elementos de entrada, como <input> y <textarea>, para activar ese elemento y permitir al usuario interactuar con él inmediatamente.
+
+Explicación Detallada
+Obtener el Elemento por su ID:
+
+document.getElementById("tabla"): Este método busca y devuelve la primera coincidencia del elemento en el documento con el ID especificado, en este caso, el elemento con ID "tabla". En el contexto del ejemplo, se refiere al textarea con ese ID.
+Enfocar el Elemento:
+
+.focus(): Este método mueve el foco de entrada al elemento especificado, permitiendo al usuario escribir en él directamente sin necesidad de hacer clic en el elemento.
+Uso Común
+El método .focus() se usa típicamente para mejorar la experiencia del usuario en formularios, ya que puede dirigir automáticamente la atención del usuario al campo donde se espera que ingrese información. En el contexto de un formulario de chat, se puede usar para limpiar el contenido del campo de entrada y preparar el campo para el siguiente mensaje. -->
+
+
+
+
+
+
+
+
+
+<!-- que hace el corchete y el signo $: ${fechaHora} ?
+
+El corchete `${}` y el signo `$` se utilizan en JavaScript dentro de una plantilla de cadena, también conocida como template literal. 
+Los template literals permiten incrustar expresiones dentro de cadenas de texto. Se delimitan usando acentos graves (```) en lugar de comillas simples (`'`) o dobles (`"`).
+
+Desglose de ${fechaHora}
+    Backticks: ` (acentos graves) delimitan una plantilla de cadena.
+
+    ${}: Los corchetes ${} se utilizan para incrustar expresiones dentro de la cadena de texto. La expresión dentro de los corchetes se evalúa, y su valor se convierte en una cadena que se inserta en la plantilla en esa posición.
+
+Ejemplo
+Supongamos que tienes una variable fechaHora que contiene una cadena de texto con la fecha y la hora actuales.
+
+# Variable
+    var fechaHora = "2024-06-13 12:34:56";                                  (javascript)
+
+# Template Literal
+    var mensaje = `La fecha y hora actuales son: ${fechaHora}`;                 (javascript)
+
+# Resultado
+    console.log(mensaje); // "La fecha y hora actuales son: 2024-06-13 12:34:56"            (javascript)
+
+Aplicación en Tu Ejemplo
+En el contexto de tu código:
+    filaFechaHora.innerHTML = `${fechaHora} por <strong>${nombre}</strong>`;     (javascript)
+
+Aquí, fechaHora y nombre son variables que contienen datos que se insertarán en la cadena resultante.
+
+    ${fechaHora}: Inserta el valor de la variable fechaHora en esa posición de la cadena.
+    
+    ${nombre}: Inserta el valor de la variable nombre en esa posición de la cadena.
+
+Comportamiento
+Si fechaHora es "2024-06-13 12:34:56" y nombre es "Juan", la línea de código:
+    filaFechaHora.innerHTML = `${fechaHora} por <strong>${nombre}</strong>`;        (javascript)
+
+resultará en:
+    filaFechaHora.innerHTML = "2024-06-13 12:34:56 por <strong>Juan</strong>";         (javascript)
+
+Ventajas de Template Literals
+    1)Interpolación de Variables: Facilita la inclusión de variables y expresiones dentro de cadenas sin necesidad de concatenación explícita.
+
+    2)Multi-línea: Permite crear cadenas de múltiples líneas de manera más sencilla que con comillas simples o dobles.
+
+    3)Legibilidad: Hace que el código sea más fácil de leer y escribir, especialmente cuando se combinan múltiples variables y texto en una sola cadena. -->
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- que hace toLocaleString? 
+    
+            var tiempo = new Date();
+            var fechaHora = tiempo.toLocaleString();
+
+    La función toLocaleString() en JavaScript se utiliza para obtener una representación de cadena de fecha y hora que sea localizada según el idioma y las preferencias regionales del usuario. Esto significa que formatea la fecha y hora de acuerdo con el formato de fecha y hora estándar del navegador o del sistema operativo del usuario.
+
+    Explicación Detallada
+    Cuando tienes una instancia de Date como tiempo = new Date();, esta representa un punto específico en el tiempo (la fecha y hora actuales en el momento de creación). Para mostrar esta fecha y hora de una manera que sea fácilmente comprensible para los usuarios en diferentes regiones del mundo, usamos toLocaleString().
+
+    Ejemplo de Uso
+    javascript
+    Copiar código
+    var tiempo = new Date();
+    var fechaHora = tiempo.toLocaleString();
+    console.log(fechaHora); // Ejemplo de resultado: "13/06/2024, 15:30:00" (formato dependiente del idioma y configuración regional)
+    ¿Cómo Funciona toLocaleString()?
+    Formato Localizado: toLocaleString() adapta la representación de fecha y hora al idioma y a las preferencias de formato de fecha/hora del usuario.
+    Opciones Adicionales: Además de toLocaleString(), existen métodos como toLocaleDateString() y toLocaleTimeString() que permiten obtener solo la fecha o solo la hora, respectivamente, también formateadas según las configuraciones locales del usuario.
+    Ventajas de toLocaleString()
+    Internacionalización: Es fundamental para aplicaciones web que deben proporcionar una experiencia consistente y comprensible para usuarios de diferentes regiones.
+    Simplificación del Formato: Evita la necesidad de formatear manualmente la fecha y hora, asegurando que cumpla con las convenciones locales estándar.
+    Ejemplo Práctico
+    Supongamos que tienes un chat donde deseas mostrar la fecha y hora en que se envió un mensaje:
+
+    javascript
+    Copiar código
+    var tiempo = new Date();
+    var fechaHora = tiempo.toLocaleString();  // Obtiene la fecha y hora localizada
+    Luego, puedes utilizar fechaHora para mostrarla en el formato correcto en tu interfaz de usuario:
+
+    javascript
+    Copiar código
+    filaFechaHora.innerHTML = `${fechaHora} por <strong>${nombre}</strong>`;
+    Personalización del Formato
+    Aunque toLocaleString() utiliza automáticamente la configuración regional del usuario, también puedes proporcionar opciones adicionales para personalizar el formato de la fecha y la hora, como especificar el formato de fecha, el idioma, y las opciones para mostrar o no la hora, el día de la semana, etc. Esto puede ser útil cuando necesitas un control más detallado sobre el formato de visualización de la fecha y la hora.
+
+    En resumen, toLocaleString() en JavaScript es una herramienta poderosa para garantizar que las fechas y horas se muestren de manera comprensible y adaptada culturalmente en aplicaciones web y otros contextos de desarrollo. -->
+
+</html>

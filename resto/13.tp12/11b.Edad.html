@@ -1,0 +1,91 @@
+<html>
+
+<head>
+
+    <title>Calcular Edad</title>
+
+    <script type="text/javascript">
+        function calcularEdad() {
+
+            var edad = prompt("ingrese edad: ");
+            var añoActual = new Date().getFullYear();            
+
+            if (edad !=+ null && !isNaN(edad) && edad !== ""){
+
+                var calEdad = añoActual - parseInt(edad);
+
+                document.getElementById("resultado").innerHTML = "Su edad es " + calEdad + " anios";
+
+            } 
+            else {
+                
+                document.getElementById("resultado").innerHTML = "Por favor, ingrese un año de nacimiento válido.";
+
+            }
+
+        }
+    </script>
+
+</head>
+
+<!-- b- Desarrollar una página que al hacer click sobre un botón 
+    "calcular edad", le pida al usuario su año de nacimiento 
+    y luego imprima por pantalla el mensaje “su edad es XX”. -->
+
+<body>
+
+    <h1>Calcular Edad</h1>
+
+    <button onclick="calcularEdad()">Calcular Edad</button>
+
+    <p id="resultado"></p>
+
+</body>
+
+
+
+<!-- url: https://chatgpt.com/share/6d281158-ceb6-4c45-8e2c-8c6dac36b5ff -->
+
+
+
+
+<!-- 1ra duda
+que es !isNaN(añoNacimiento) 
+
+La expresión !isNaN(añoNacimiento) se utiliza para verificar que el valor de añoNacimiento es un número válido. 
+
+Aquí hay un desglose de lo que significa:
+
+1)
+isNaN: Esta es una función global en JavaScript que determina si el valor proporcionado es NaN (Not-a-Number). La función devuelve true si el valor no puede ser convertido a un número, y false si puede ser convertido a un número.
+
+2)
+!: Este es el operador de negación lógica en JavaScript. Invierte el valor booleano de la expresión a la que se aplica. Si la expresión es true, la negación ! la convierte en false, y viceversa.
+
+3)
+!isNaN(añoNacimiento): Esto verifica si añoNacimiento es un número. 
+
+Si isNaN(añoNacimiento) devuelve true (lo que significa que añoNacimiento no es un número), !isNaN(añoNacimiento) devolverá false. 
+
+Por el contrario, si isNaN(añoNacimiento) devuelve false (lo que significa que añoNacimiento es un número), !isNaN(añoNacimiento) devolverá true. -->
+
+
+
+
+
+
+
+
+<!-- 2da duda
+que hace esto: añoNacimiento !== "" ?-------------------------------
+
+La expresión añoNacimiento !== "" verifica que la variable añoNacimiento no sea una cadena vacía. Aquí está el desglose de lo que hace esta verificación y por qué es importante:
+
+!==: Este es el operador de desigualdad estricta en JavaScript. Compara dos valores y devuelve true si no son iguales y false si son iguales. A diferencia del operador de desigualdad (!=), el operador de desigualdad estricta (!==) no realiza conversión de tipos. Es decir, compara tanto el valor como el tipo de datos de los operandos.
+
+añoNacimiento !== "": Comprueba si la variable añoNacimiento no es exactamente igual a una cadena vacía (""). Si añoNacimiento contiene cualquier valor distinto de una cadena vacía, la expresión devolverá true. Si añoNacimiento es una cadena vacía, devolverá false.
+
+¿Por qué es importante esta verificación?
+Cuando se pide al usuario que ingrese su año de nacimiento utilizando prompt(), el usuario puede hacer clic en "Aceptar" sin ingresar ningún valor. En ese caso, prompt() devolverá una cadena vacía (""). Verificar que añoNacimiento no sea una cadena vacía ayuda a asegurar que el usuario realmente haya ingresado algún valor antes de proceder con el cálculo de la edad. -->
+
+</html>

@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    
+    <title>Lista de Meses</title>
+
+</head>
+
+<body>
+
+    <ul id="listaMeses"></ul>
+
+    <script>
+        // Array con los nombres de los meses
+        var meses = [
+            'Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+            'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'
+        ];
+
+        // Referencia al elemento UL en el DOM
+        var lista = document.getElementById('listaMeses');
+
+        // Recorre el array con un for
+        for (var i = 0; i < meses.length; i++) {
+            
+            // Creo un elemento LI por cada mes
+            var li = document.createElement('li');
+
+            // Asigno el nombre del mes al elemento LI
+            li.textContent = meses[i];
+
+            // Añade el elemento LI al UL
+            lista.appendChild(li);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

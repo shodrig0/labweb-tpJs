@@ -1,0 +1,57 @@
+<html>
+
+<head>
+
+    <title>Numeros Primos</title>
+
+    <script type="text/javascript">
+        
+        function esPrimo(num) {
+
+            var res;
+            for (var i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    res = false; // retorna false si no es primo
+                }
+                else{
+                    res = num > 1; // retorna true si es primo
+                }
+            }
+            return  res;
+            
+        }
+
+        function darResultado() {
+
+            var divNum = document.getElementById("primos")
+            var ul = document.createElement('ul');
+            divNum.appendChild(ul); // me lo crea en el div o afuera?
+
+            for (var x = 0; x < 100; x++) {
+
+                if (esPrimo(x)) {
+
+                    var li = document.createElement('li');
+                    li.innerHTML += x; 
+                    ul.appendChild(li);
+
+                }
+
+            }
+            
+        }
+
+        
+    </script>
+
+</head>
+
+<body onload="darResultado()">
+
+    <h1>Números Primos Menores a 100</h1>
+
+    <div id="primos"></div>
+
+</body>
+
+</html>

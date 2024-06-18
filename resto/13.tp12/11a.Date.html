@@ -1,0 +1,90 @@
+<html>
+
+<!-- 
+a- Desarrollar una página que imprima en pantalla:
+# La Fecha actual, la hora, minutos y segundos.
+# La cantidad de días, horas, minutos y segundos que faltan 
+para el parcial de javascript.
+
+b- Desarrollar una página que al hacer click sobre un botón 
+"calcular edad", le pida al usuario su año de nacimiento 
+y luego imprima por pantalla el mensaje "su edad es XX". -->
+
+<head>
+
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // primera forma:----------------------------------------------
+
+        //inicializacion de variables
+        var fechaInicio = new Date('2024-06-12');
+        var fechaFin = new Date('2024-06-18');
+
+        // Obtener el tiempo en milisegundos para cada fecha
+        var tiempoInicio = fechaInicio.getTime();
+        var tiempoFin = fechaFin.getTime();
+
+        // Calcular la diferencia en milisegundos
+        var diff = tiempoFin - tiempoInicio;
+
+        // Convertir la diferencia de milisegundos a días
+        var diffDias = diff / (1000 * 60 * 60 * 24);
+
+        document.write(diffDias + " dias faltan. (primera forma)<br>");
+
+        
+        
+        
+        
+        // segunda forma: -------------------------------------------
+
+        var fechaInicioDos = new Date('2024-06-12');
+        var fechaFinDos = new Date('2024-06-18');
+
+        // Calcular la diferencia en milisegundos directamente
+        var diferencia = fechaFinDos - fechaInicioDos;
+
+        // Convertir la diferencia de milisegundos a días
+        var diferenciaDias = diferencia / (1000 * 60 * 60 * 24);
+
+        document.write(diferenciaDias + " dias faltan. (segunda forma)<br>");
+
+        
+        
+        
+        
+        
+        // FORMA DEL ENUNCIADO SOLO DIAS-HORAS-SEGUNDOS:--------------------
+
+        var fechaInicioTres = new Date('2024-06-12T20:17:30');
+        var fechaFinTres = new Date('2024-06-18T17:00:00');
+
+        // Calcular la diferencia en milisegundos directamente
+        var diferenciaTres = fechaFinTres - fechaInicioTres;
+
+        // Calcular la diferencia en días
+        var diferenciasDiasTres = Math.floor(diferenciaTres / (1000 * 60 * 60 * 24));
+
+        // Calcular la diferencia en horas restantes
+        var diferenciasHorasTres = Math.floor((diferenciaTres % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        // Calcular la diferencia en minutos restantes
+        var diferenciasMinutosTres = Math.floor((diferenciaTres % (1000 * 60 * 60)) / (1000 * 60));
+
+        // Calcular la diferencia en segundos restantes
+        var diferenciasSegundosTres = Math.floor((diferenciaTres % (1000 * 60)) / 1000);
+
+        document.write("<br>");
+        document.write("Días: " + diferenciasDiasTres + "<br>");
+        document.write("Horas: " + diferenciasHorasTres + "<br>");
+        document.write("Minutos: " + diferenciasMinutosTres + "<br>");
+        document.write("Segundos: " + diferenciasSegundosTres + "<br>");
+        
+    </script>
+
+</body>
+
+</html>
